@@ -1,3 +1,22 @@
+## Hack
+
+Support custom canvas animation.
+
+```js
+function CustomAnimation ({width, height, canvas, ...}) { ... }
+CustomAnimation.prototype.render = function (progress) { ... }
+lottiejs.customAnimations.diyAnim = CustomAnimation
+```
+
+```json
+{
+  "nm": "diyAnim", // Name of custom animation defined in `customAnimations`
+  "ty": 101,       // for custom type
+  "customOptions": {}  // Any options for constructor of custom animation
+}
+```
+
+
 # Lottie for Web, [Android](https://github.com/airbnb/lottie-android), [iOS](https://github.com/airbnb/lottie-ios), [React Native](https://github.com/airbnb/lottie-react-native), and [Windows](https://aka.ms/lottie)
 
 Lottie is a mobile library for Web,  and iOS that parses [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) animations exported as json with [Bodymovin](https://github.com/airbnb/lottie-web) and renders them natively on mobile!
