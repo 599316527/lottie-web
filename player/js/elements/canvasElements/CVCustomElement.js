@@ -1,7 +1,5 @@
 function CVCustomElement(data, globalData, comp){
     this.failed = false;
-    this.assetData = globalData.getAssetData(data.refId);
-    this.img = globalData.imageLoader.getImage(this.assetData);
     this.initElement(data,globalData,comp);
 }
 extendPrototype([BaseElement, TransformElement, CVBaseElement, HierarchyElement, FrameElement, RenderableElement], CVCustomElement);
@@ -16,11 +14,19 @@ CVCustomElement.prototype.createContent = function(){
     canvas.width = width;
     canvas.height = height;
     this.img = canvas;
-    this.customAnimation = new customAnimations[this.data.nm](Object.assign({
+
+    var data = {
         width: width,
         height: height,
         canvas: canvas
-    }, this.data.customOptions || {}));
+    };
+    var customOptions = this.data.customOptions || {};
+    for (var key in customOptions) {
+        if (customOptions.hasOwnProperty(key)) {
+            data[key] = customOptions[key];
+        }
+    }
+    this.customAnimation = new customAnimations[this.data.nm](data);
 };
 
 CVCustomElement.prototype.prepareRenderableFrame = function (num) {
