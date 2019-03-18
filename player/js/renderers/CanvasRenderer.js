@@ -48,6 +48,10 @@ CanvasRenderer.prototype.createSolid = function (data) {
     return new CVSolidElement(data, this.globalData, this);
 };
 
+CanvasRenderer.prototype.createCustom = function (data) {
+    return new CVCustomElement(data, this.globalData, this);
+};
+
 CanvasRenderer.prototype.createNull = SVGRenderer.prototype.createNull;
 
 CanvasRenderer.prototype.ctxTransform = function(props){

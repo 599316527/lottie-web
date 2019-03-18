@@ -106,6 +106,7 @@
     lottiejs.getRegisteredAnimations = animationManager.getRegisteredAnimations;
     lottiejs.__getFactory = getFactory;
     lottiejs.version = '[[BM_VERSION]]';
+    lottiejs.customAnimations = customAnimations;
 
     function checkReady() {
         if (document.readyState === "complete") {

@@ -31,6 +31,8 @@ BaseRenderer.prototype.createItem = function(layer){
             return this.createText(layer);
         case 13:
             return this.createCamera(layer);
+        case 101:
+            return this.createCustom(layer);
     }
     return this.createNull(layer);
 };
