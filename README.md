@@ -8,7 +8,7 @@ CustomAnimation.prototype.render = function (progress) { ... }
 lottiejs.customAnimations.diyAnim = CustomAnimation
 ```
 
-```json
+```
 {
   "nm": "diyAnim", // Name of custom animation defined in `customAnimations`
   "ty": 101,       // for custom type
